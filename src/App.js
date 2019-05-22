@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
+import HSL from './components/HSL'
+// import ColorDisplay from './components/ColorDisplay'
 
 class App extends Component {
   render() {
-    return <HelloWorld />
+    return (
+      <>
+        {/* <ColorDisplay /> */}
+        <HSL />
+      </>
+    )
   }
 }
 
