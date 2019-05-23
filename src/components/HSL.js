@@ -4,9 +4,11 @@ class HSL extends Component {
   state = {
     h: Math.floor(Math.random() * 360),
     s: Math.floor(Math.random() * 100),
-    l: Math.floor(Math.random() * 100)
+    l: Math.floor(Math.random() * 100),
+    a: Math.floor(Math.random() * 100) / 100
   }
   functionH = event => {
+    console.log(event)
     console.log(event.target.value)
     this.setState({
       h: event.target.value
@@ -22,11 +24,18 @@ class HSL extends Component {
       l: event.target.value
     })
   }
+  functionA = event => {
+    console.log(event.target.value)
+    this.setState({
+      a: event.target.value
+    })
+  }
   functionPickRandomColor = () => {
     this.setState({
       h: Math.floor(Math.random() * 360),
       s: Math.floor(Math.random() * 100),
-      l: Math.floor(Math.random() * 100)
+      l: Math.floor(Math.random() * 100),
+      a: Math.floor(Math.random() * 100) / 100
     })
   }
   /*  functionDetermineColor = () => {
@@ -49,7 +58,7 @@ class HSL extends Component {
           style={{
             backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${
               this.state.l
-            }%)`
+            }%, ${this.state.a})`
           }}
         >
           <header className="title">Pick a color, any color</header>
@@ -83,11 +92,22 @@ class HSL extends Component {
               onChange={this.functionL}
             />
           </div>
+          <div>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              class="slider"
+              step="0.01"
+              onChange={this.functionA}
+            />
+          </div>
           <div className="display-info">
             {/* <p>This should be the color that is displayed</p> */}
             <p>Hue {this.state.h}</p>
             <p>Saturation {this.state.s}%</p>
             <p>Lightness {this.state.l}%</p>
+            <p>Alpha {this.state.a}</p>
           </div>
           <button className="button" onClick={this.functionPickRandomColor}>
             CAN DO
