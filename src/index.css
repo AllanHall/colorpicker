@@ -17,9 +17,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.display-title {
+.title {
+  color: white;
+  padding-bottom: 8rem;
+  font-size: 32px;
+}
+
+.display-info {
   text-align: center;
   color: white;
 }
@@ -27,5 +34,9 @@ body {
 .display {
   height: 20vh;
   width: 20vw;
+  margin: 0 auto;
+}
+
+.button {
   margin: 0 auto;
 }

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 class HSL extends Component {
   state = {
-    h: 180,
-    s: 50,
-    l: 50
+    h: Math.floor(Math.random() * 360),
+    s: Math.floor(Math.random() * 100),
+    l: Math.floor(Math.random() * 100)
   }
   functionH = event => {
     console.log(event.target.value)
@@ -20,6 +20,13 @@ class HSL extends Component {
   functionL = event => {
     this.setState({
       l: event.target.value
+    })
+  }
+  functionPickRandomColor = () => {
+    this.setState({
+      h: Math.floor(Math.random() * 360),
+      s: Math.floor(Math.random() * 100),
+      l: Math.floor(Math.random() * 100)
     })
   }
   /*  functionDetermineColor = () => {
@@ -45,6 +52,7 @@ class HSL extends Component {
             }%)`
           }}
         >
+          <header className="title">Pick a color, any color</header>
           <div>
             <input
               type="range"
@@ -75,12 +83,15 @@ class HSL extends Component {
               onChange={this.functionL}
             />
           </div>
-          <div className="display-title">
+          <div className="display-info">
             {/* <p>This should be the color that is displayed</p> */}
-            <p>{this.state.h} This should be the value of h</p>
-            <p>{this.state.s} This should be the value of s</p>
-            <p>{this.state.l} This should be the value of l</p>
+            <p>Hue {this.state.h}</p>
+            <p>Saturation {this.state.s}%</p>
+            <p>Lightness {this.state.l}%</p>
           </div>
+          <button className="button" onClick={this.functionPickRandomColor}>
+            CAN DO
+          </button>
         </main>
       </>
     )
