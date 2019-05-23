@@ -53,66 +53,72 @@ class HSL extends Component {
   render() {
     return (
       <>
-        <main
-          className="sliders"
-          style={{
-            backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${
-              this.state.l
-            }%, ${this.state.a})`
-          }}
-        >
-          <header className="title">Pick a color, any color</header>
-          <div>
-            <input
-              type="range"
-              min="1"
-              max="360"
-              class="slider"
-              step="1"
-              onChange={this.functionH}
-            />
-          </div>
-          <div>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              class="slider"
-              step="1"
-              onChange={this.functionS}
-            />
-          </div>
-          <div>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              class="slider"
-              step="1"
-              onChange={this.functionL}
-            />
-          </div>
-          <div>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              class="slider"
-              step="0.01"
-              onChange={this.functionA}
-            />
-          </div>
-          <div className="display-info">
-            {/* <p>This should be the color that is displayed</p> */}
-            <p>Hue {this.state.h}</p>
-            <p>Saturation {this.state.s}%</p>
-            <p>Lightness {this.state.l}%</p>
-            <p>Alpha {this.state.a}</p>
-          </div>
-          <button className="button" onClick={this.functionPickRandomColor}>
-            CAN DO
-          </button>
-        </main>
+        <section className="pattern">
+          <main
+            className="sliders"
+            style={{
+              backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${
+                this.state.l
+              }%, ${this.state.a})`
+            }}
+          >
+            <header className="title">Pick a color, any color</header>
+            <div>
+              <input
+                type="range"
+                min="1"
+                max="360"
+                class="slider"
+                step="1"
+                onChange={this.functionH}
+                value={this.state.h}
+              />
+            </div>
+            <div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                class="slider"
+                step="1"
+                onChange={this.functionS}
+                value={this.state.s}
+              />
+            </div>
+            <div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                class="slider"
+                step="1"
+                onChange={this.functionL}
+                value={this.state.l}
+              />
+            </div>
+            <div>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                class="slider"
+                step="0.01"
+                onChange={this.functionA}
+                value={this.state.a}
+              />
+            </div>
+            <div className="display-info">
+              {/* <p>This should be the color that is displayed</p> */}
+              <p>Hue {this.state.h}</p>
+              <p>Saturation {this.state.s}%</p>
+              <p>Lightness {this.state.l}%</p>
+              <p>Alpha {this.state.a}</p>
+            </div>
+            <button className="button" onClick={this.functionPickRandomColor}>
+              CAN DO
+            </button>
+          </main>
+        </section>
       </>
     )
   }

@@ -12,6 +12,10 @@ body {
   background-color: black;
 }
 
+.pattern {
+  background: url('http://subtlepatterns.com/patterns/bo_play_pattern.png');
+}
+
 .sliders {
   display: flex;
   flex-direction: column;
